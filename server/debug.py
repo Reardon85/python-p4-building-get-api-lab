@@ -5,4 +5,12 @@ from models import db, Bakery, BakedGood
 
 if __name__ == '__main__':
     with app.app_context():
-        import ipdb; ipdb.set_trace()
+        
+
+        bakeries = []
+
+        for bakery in Bakery.query.all():
+            result = bakery.to_dict()
+            bakeries.append(result)
+
+    import ipdb; ipdb.set_trace()
